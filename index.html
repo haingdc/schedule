@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en-us">
+
+<head>
+  <title>Hello World.</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="icon" href="wave.png">
+  <link rel="stylesheet" href="style.css">
+  <meta name="description" content="A simple hello world HTML example.">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+    @layer default {
+      body {
+        background-color: #fff;
+        font-family: Nunito;
+      }
+    }
+
+    @layer my-components {
+      .container {
+        container-type: inline-size;
+      }
+
+      .row {
+        display: flex;
+      }
+
+      .schedule {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        max-width: 800px;
+
+        .label {
+          font-size: 24px;
+          line-height: 32px;
+          font-weight: bold;
+          text-transform: uppercase;
+        }
+        .text {
+          font-size: 16px;
+        }
+        .bold {
+          font-weight: bold;
+        }
+        .italic {
+          font-style: italic;
+        }
+
+        .schedule--header {
+          display: flex;
+
+          .label {
+            padding-right: 32px;
+          }
+
+          .value {
+            background-color: #000;
+            color: #fff;
+            padding: 4px 32px;
+          }
+
+          .else {
+            flex: 1;
+            background-color: #fed700;
+            border-radius: 0 36px 0 0;
+          }
+        }
+
+        .schedule--table {
+          display: grid;
+          grid-template-columns: auto 1fr;
+
+          .header {
+            grid-column: 1 / 3;
+            background-color: #000;
+            color: #fff;
+            padding: 4px 40px;
+            font-size: 20px;
+          }
+
+          .cell--key,
+          .cell--value {
+            border-left: 1px solid #000;
+            border-bottom: 1px solid #000;
+          }
+
+          .cell--key {
+            background-color: #e6e7e9;
+            color: #000;
+            padding: 8px 20px;
+          }
+
+          .cell--value {
+            padding: 8px 16px;
+          }
+        }
+      }
+
+      @container (min-width: 600px) {
+        .schedule {
+          /* border: 1px solid red; */
+        }
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="schedule">
+      <div class="schedule--header">
+        <div class="label">
+          schedule
+        </div>
+        <div class="value">30th June 2022</div>
+        <div class="else"></div>
+      </div>
+      <div class="schedule--table">
+        <div class="header">Time</div>
+        <div class="cell--key">08:00 - 08:30</div>
+        <div class="cell--value">
+          <div class="text">Welcome guests</div>
+        </div>
+        <div class="cell--key">08:30 - 08:45</div>
+        <div class="cell--value">
+          Opening session
+        </div>
+        <div class="cell--key">08:45 - 09:30</div>
+        <div class="cell--value">
+          <div class="text bold italic">Building Authentic Voices for Global Students</div>
+          <div class="text">By Andrew Duenas</div>
+        </div>
+
+        <div class="cell--key">09:30 - 10:15</div>
+        <div class="cell--value">
+          <div class="text bold italic">Empowering English Language Learners via Authentic Materials</div>
+          <div class="text">By Dr. Tran Quoc Thao</div>
+        </div>
+        <div class="cell--key">10:15 - 10:30</div>
+        <div class="cell--value">
+          <div class="text">Break</div>
+        </div>
+
+        <div class="cell--key">10:30 - 11:30</div>
+        <div class="cell--value">
+          <div class="text bold italic">How to Develop Original Thinking in Students' Communication</div>
+          <div class="text">By Dr. Nguyen Chi Hieu</div>
+        </div>
+
+        <div class="cell--key">11:35 - 11:45</div>
+        <div class="cell--value">
+          <div class="text">Introducing <span class="bold">National Geographic Learning Program: Voices</span></div>
+          <div class="text">By Andrew Duenas</div>
+        </div>
+
+        <div class="cell--key">11:45 - 12:00</div>
+        <div class="cell--value">
+          <div class="text">Q&A</div>
+          <div class="text">Survey and lucky draw</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<script src="main.js"></script>
+<script type="module" src="main2.mjs"></script>
+
+</html>
